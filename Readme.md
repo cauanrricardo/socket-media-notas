@@ -44,3 +44,7 @@ O cliente envia **três notas numéricas** ao servidor, que calcula a **média a
 | `client.py`                    | Cliente TCP — envia as notas e exibe a resposta recebida              |
 | `imagem-terminal-servidor.png` | Captura do terminal do servidor mostrando conexão e cálculo da média  |
 | `imagem-terminal-cliente.png`  | Captura do terminal do cliente mostrando envio e resposta da mensagem |
+
+> ⚙️ Este projeto foi desenvolvido com base em estudos de redes e apoio em materiais didáticos e explicações assistidas por IA (ChatGPT).  
+> Todo o código foi testado e adptado pro nosso interesse.
+
