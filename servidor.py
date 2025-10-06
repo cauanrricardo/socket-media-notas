@@ -1,23 +1,23 @@
 import socket
 
-# Cria o socket TCP
+# cria o socket TCP
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# Associa IP e porta (0.0.0.0 significa "todas interfaces")
+# associa IP e porta (0.0.0.0 significa "todas interfaces")
 server.bind(("0.0.0.0", 5000))
 server.listen(1)
 
 print("Servidor esperando conexão...")
 
-# Aceita conexão
+# aceita conexão
 conn, addr = server.accept()
 print(f"Conectado a {addr}")
 
-# Recebe dados do cliente
+# recebe dados do cliente
 data = conn.recv(1024).decode()
 print(f"Recebi: {data}")
 
-# Espera que o cliente envie algo como: "6.5 7 8"
+# espera resposta do cliente
 try:
     notas = [float(n) for n in data.split()]
     if len(notas) != 3:
@@ -39,10 +39,10 @@ elif 4 <= media < 7:
 else:
     resultado = "Reprovado"
 
-# Envia resposta
+# envia resposta
 conn.send(f"Média: {media:.2f} - {resultado}".encode())
 print(f"Resultado enviado: {resultado} (média {media:.2f})")
 
-# Fecha conexão
+# fecha conexão
 conn.close()
 server.close()
